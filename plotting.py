@@ -29,10 +29,10 @@ def load_text_file(name):
     U_inf = 6.82 #Free Stream velocity (m/s)
     D = .25 #Diameter of turbine (meters)
     #Labels to be reused 
-    labelx = '$Diameters Down Stream y/D (D = 0.25m)$'
-    labely = '$Velocity Defecit (U_\infty-U_c)/U_\infty$'
-    labelk = '$Turbulent Kinetic Energy (m^2/s^2)$'
-    labelw = '$Dissipation Rate (1/s)$'
+    labelx = r'Diameters Downstream $y/D$ ($D = 0.25$ m)'
+    labely = r'Velocity Deficit $(U_\infty-U_c)/U_\infty$'
+    labelk = r'Turbulent Kinetic Energy $(\mathrm{m}^2/\mathrm{s}^2)$'
+    labelw = r'Dissipation Rate $(1/\mathrm{s})$'
 
     x, u, v, w = np.loadtxt(filepath, unpack=True)
     #u_nf = (U_inf-u)/U_inf
@@ -43,7 +43,7 @@ def load_text_file(name):
     plt.plot(x, u/U_inf, "r")
     plt.title("Velocity at Hub Height Along Wind Tunnel")
     plt.xlabel('Distance Along Tunnel (m)')
-    plt.ylabel('$Normalized Velocity U/U_\infty$')
+    plt.ylabel(r'Normalized Velocity $U/U_\infty$')
     plt.grid()
     plt.tight_layout()
 
@@ -81,7 +81,7 @@ def load_text_file(name):
     plt.plot( u1/U_inf ,h1, "r")
     plt.plot( u2/U_inf ,h2, "g")
     plt.title("Velocity Profile behind Turbine")
-    plt.xlabel('$Normalized Velocity U/U_\infty$')
+    plt.xlabel(r'Normalized Velocity $U/U_\infty$')
     plt.ylabel("Height (m)")
     plt.grid()
     plt.tight_layout()
